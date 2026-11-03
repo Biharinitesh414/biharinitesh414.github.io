@@ -3,36 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>बिहारी नित्य - ऑफिशियल वेबसाइट</title>
+    <title>Bihari Editor - Official Website</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f4f9; color: #333; margin: 0; padding: 20px; text-align: center; }
-        header { background: #ff5722; color: white; padding: 20px; border-radius: 8px; }
-        main { margin: 20px auto; max-width: 600px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        form { display: flex; flex-direction: column; gap: 15px; }
-        input, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-        button { background: #ff5722; color: white; border: none; padding: 10px; border-radius: 4px; cursor: pointer; font-size: 16px; }
-        button:hover { background: #e64a19; }
-        footer { margin-top: 20px; font-size: 14px; color: #777; }
+        body { background-color: #0b0714; color: #ffffff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; text-align: center; }
+        header { background: linear-gradient(135deg, #1b0c3f, #0b0714); padding: 40px 20px; border-bottom: 2px solid #8a2be2; }
+        h1 { color: #bf55ec; font-size: 2.5em; margin-bottom: 10px; }
+        .tagline { color: #cccccc; font-size: 1.2em; margin-bottom: 30px; }
+        .services-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 40px 20px; }
+        .card { background: #150e26; border: 1px solid #3b2363; border-radius: 12px; width: 260px; padding: 20px; box-shadow: 0 4px 15px rgba(138, 43, 226, 0.2); }
+        .card h3 { color: #bf55ec; margin-top: 15px; }
+        .card p { color: #aaaaaa; font-size: 0.9em; }
+        .contact-section { background: #120922; padding: 40px 20px; border-top: 2px solid #8a2be2; margin-top: 20px; }
+        form { max-width: 450px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; text-align: left; }
+        label { color: #bf55ec; font-weight: bold; font-size: 0.9em; }
+        input, textarea { width: 100%; padding: 12px; background: #1a1033; border: 1px solid #4a2c82; color: white; border-radius: 8px; box-sizing: border-box; }
+        input:focus, textarea:focus { outline: none; border-color: #bf55ec; }
+        button { background: linear-gradient(135deg, #8a2be2, #bf55ec); color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-size: 1.1em; font-weight: bold; transition: 0.3s; }
+        button:hover { opacity: 0.9; }
+        footer { padding: 20px; background: #07040d; color: #777777; font-size: 0.9em; border-top: 1px solid #22153b; }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>स्वागत है भाई!</h1>
-        <p>यह मेरी अपनी ओरिजिनल वेबसाइट है।</p>
+        <h1>Bihari Editor</h1>
+        <p class="tagline">Turn Your Ideas Into Visual Magic ✨</p>
+        <p>Video Editing | Photography | Cinematography | Decoration</p>
     </header>
-    <main>
-        <section>
-            <h2>संपर्क करें (Contact Form)</h2>
-            <form action="https://formspree.io/f/xqppgnvw" method="POST">
-                <input type="text" name="name" placeholder="आपका नाम" required>
-                <input type="email" name="email" placeholder="आपकी ईमेल आईडी" required>
-                <textarea name="message" rows="4" placeholder="अपना संदेश यहाँ लिखें..." required></textarea>
-                <button type="submit">संदेश भेजें</button>
-            </form>
-        </section>
-    </main>
+
+    <section>
+        <h2 style="color: #bf55ec; margin-top: 40px;">Our Services</h2>
+        <div class="services-container">
+            <div class="card">
+                <h3>Video Editing</h3>
+                <p>Professional & Creative Video Editing for Digital Platforms.</p>
+            </div>
+            <div class="card">
+                <h3>Photography</h3>
+                <p>Capture Your Best Moments with High Quality Shots.</p>
+            </div>
+            <div class="card">
+                <h3>Cinematography</h3>
+                <p>Tell Your Story Cinematically with Stunning Visuals.</p>
+            </div>
+            <div class="card">
+                <h3>Decoration</h3>
+                <p>Make Your Event Special with Professional Decoration.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="contact-section">
+        <h2 style="color: #bf55ec;">Need Our Services?</h2>
+        <p style="color: #bbb; margin-bottom: 25px;">Submit Your Requirements Below</p>
+        
+        <form action="https://formspree.io/f/xqppgnvw" method="POST">
+            <label>Your Name</label>
+            <input type="text" name="name" placeholder="अपना नाम लिखें" required>
+            
+            <label>Your Email</label>
+            <input type="email" name="email" placeholder="अपनी ईमेल आईडी लिखें" required>
+            
+            <label>Your Requirement</label>
+            <textarea name="message" rows="4" placeholder="अपनी ज़रूरत यहाँ साझा करें (जैसे Photography, Decoration)..." required></textarea>
+            
+            <button type="submit">Submit Now ➔</button>
+        </form>
+    </div>
+
     <footer>
-        <p>&copy; 2026 बिहाँरी नित्य. सर्वाधिकार सुरक्षित.</p>
+        <p>&copy; 2026 Bihari Editor. All Rights Reserved. | Made with ❤️ in Bihar</p>
     </footer>
+
 </body>
 </html>
