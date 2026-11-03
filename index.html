@@ -1,211 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bihari Editor - Turn Your Ideas Into Visual Magic</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Bihari Editor - Official Website</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: #05030a; color: #ffffff; overflow-x: hidden; }
-
-        /* Navbar */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 5%; background: rgba(15, 8, 28, 0.9); border-bottom: 1px solid rgba(168, 85, 247, 0.2); position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
-        .logo { font-size: 1.6rem; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px; }
-        .logo span { color: #a855f7; font-style: italic; }
-        .nav-links { display: flex; list-style: none; gap: 25px; align-items: center; }
-        .nav-links a { color: #ccc; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: 0.3s; }
-        .nav-links a:hover, .nav-links a.active { color: #a855f7; }
-        .btn-talk { background: linear-gradient(135deg, #a855f7, #6b21a8); color: white; padding: 8px 22px; border-radius: 20px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; box-shadow: 0 0 15px rgba(168, 85, 247, 0.4); }
-
-        /* Hero Section */
-        .hero { display: flex; align-items: center; justify-content: space-between; padding: 60px 5%; min-height: 80vh; background: radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.15) 0%, transparent 50%); }
-        .hero-text { max-width: 50%; }
-        .hero-tag { color: #aaa; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; }
-        .hero-title { font-size: 3.8rem; font-weight: 900; line-height: 1.1; margin-bottom: 15px; }
-        .hero-title span { color: #a855f7; font-style: italic; }
-        .hero-subtitle { font-size: 1.3rem; color: #fff; font-weight: 600; margin-bottom: 10px; }
-        .hero-services-list { color: #888; font-size: 0.95rem; margin-bottom: 30px; }
-        .btn-purple { background: linear-gradient(135deg, #a855f7, #7e22ce); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 0 20px rgba(168, 85, 247, 0.5); transition: 0.3s; }
-        .btn-purple:hover { transform: translateY(-3px); }
-
-        .hero-image-container { position: relative; max-width: 45%; }
-        .hero-img { width: 100%; border-radius: 15px; border: 2px solid rgba(168, 85, 247, 0.3); box-shadow: 0 0 30px rgba(168, 85, 247, 0.3); }
-
-        /* Section Header */
-        .section-header { text-align: center; margin: 50px 0 30px; }
-        .section-title { font-size: 2.2rem; font-weight: 800; }
-        .section-title span { color: #a855f7; }
-        .section-desc { color: #888; font-size: 0.95rem; }
-
-        /* Services Grid */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; padding: 0 5%; margin-bottom: 60px; }
-        .service-card { background: #0f091d; border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 12px; padding: 15px; text-align: center; transition: 0.3s; }
-        .service-card:hover { border-color: #a855f7; transform: translateY(-5px); box-shadow: 0 5px 20px rgba(168, 85, 247, 0.2); }
-        .service-img { width: 100%; height: 140px; object-fit: cover; border-radius: 8px; margin-bottom: 12px; }
-        .service-card h3 { font-size: 1.1rem; margin-bottom: 6px; }
-        .service-card p { color: #888; font-size: 0.8rem; margin-bottom: 15px; }
-        .btn-card { background: #7e22ce; color: white; border: none; padding: 8px 18px; border-radius: 18px; font-size: 0.85rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; }
-
-        /* Double Box Form Section */
-        .form-section { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; padding: 0 5%; margin-bottom: 60px; }
-        .banner-box { background: linear-gradient(135deg, #180b30, #0d051c); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 15px; padding: 30px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; }
-        .banner-box h4 { color: #a855f7; font-size: 0.9rem; margin-bottom: 10px; }
-        .banner-box h2 { font-size: 2.2rem; font-weight: 900; line-height: 1.2; margin-bottom: 15px; }
-        .banner-box h2 span { color: #a855f7; }
-        .banner-box p { color: #aaa; font-size: 0.85rem; margin-bottom: 25px; }
-
-        .form-box { background: #0f091d; border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 15px; padding: 30px; }
-        .form-box h3 { font-size: 1.6rem; margin-bottom: 5px; }
-        .form-box p { color: #888; font-size: 0.85rem; margin-bottom: 20px; }
-        .form-group { margin-bottom: 12px; }
-        .form-group input, .form-group textarea, .form-group select { width: 100%; background: #170d2c; border: 1px solid rgba(168, 85, 247, 0.2); padding: 12px 15px; border-radius: 8px; color: white; outline: none; font-size: 0.9rem; }
-        .checkbox-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 15px 0; }
-        .checkbox-item { display: flex; align-items: center; gap: 8px; color: #ccc; font-size: 0.85rem; }
-        .checkbox-item input { accent-color: #a855f7; }
-        .btn-submit { width: 100%; background: linear-gradient(135deg, #a855f7, #6b21a8); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 1rem; box-shadow: 0 0 15px rgba(168, 85, 247, 0.4); }
-
-        /* Footer */
-        footer { background: #080412; border-top: 1px solid rgba(168, 85, 247, 0.2); padding: 40px 5% 20px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1.5fr 1fr 1.5fr; gap: 30px; margin-bottom: 30px; }
-        .footer-info h4 { margin-bottom: 15px; color: #a855f7; }
-        .footer-info p { color: #888; font-size: 0.85rem; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
-        .social-icons { display: flex; gap: 12px; margin-top: 15px; }
-        .social-icons a { width: 35px; height: 35px; background: #170d2c; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #a855f7; text-decoration: none; border: 1px solid rgba(168, 85, 247, 0.3); }
-        .footer-bottom { text-align: center; color: #555; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; }
-
-        @media (max-width: 768px) {
-            .hero { flex-direction: column; text-align: center; }
-            .hero-text { max-width: 100%; margin-bottom: 30px; }
-            .hero-image-container { max-width: 100%; }
-            .form-section { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; }
-        }
+        body { background-color: #0b0714; color: #ffffff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; text-align: center; }
+        header { background: linear-gradient(135deg, #1b0c3f, #0b0714); padding: 40px 20px; border-bottom: 2px solid #8a2be2; }
+        h1 { color: #bf55ec; font-size: 2.5em; margin-bottom: 10px; }
+        .tagline { color: #cccccc; font-size: 1.2em; margin-bottom: 30px; }
+        .services-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 40px 20px; }
+        .card { background: #150e26; border: 1px solid #3b2363; border-radius: 12px; width: 260px; padding: 20px; box-shadow: 0 4px 15px rgba(138, 43, 226, 0.2); }
+        .card h3 { color: #bf55ec; margin-top: 15px; }
+        .card p { color: #aaaaaa; font-size: 0.9em; }
+        .contact-section { background: #120922; padding: 40px 20px; border-top: 2px solid #8a2be2; margin-top: 20px; }
+        form { max-width: 450px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; text-align: left; }
+        label { color: #bf55ec; font-weight: bold; font-size: 0.9em; }
+        input, textarea { width: 100%; padding: 12px; background: #1a1033; border: 1px solid #4a2c82; color: white; border-radius: 8px; box-sizing: border-box; }
+        input:focus, textarea:focus { outline: none; border-color: #bf55ec; }
+        button { background: linear-gradient(135deg, #8a2be2, #bf55ec); color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-size: 1.1em; font-weight: bold; transition: 0.3s; }
+        button:hover { opacity: 0.9; }
+        footer { padding: 20px; background: #07040d; color: #777777; font-size: 0.9em; border-top: 1px solid #22153b; }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="logo"><i class="fa-solid =>-crown" style="color: #a855f7;"></i> BE <span>Bihari Editor</span></div>
-        <ul class="nav-links">
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#form">Apply / Submit</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <a href="https://instagram.com/biharinitesh414" target="_blank" class="btn-talk"><i class="fa-paper-plane"></i> Let's Talk</a>
-    </nav>
+    <header>
+        <h1>Bihari Editor</h1>
+        <p class="tagline">Turn Your Ideas Into Visual Magic ✨</p>
+        <p>Video Editing | Photography | Cinematography | Decoration</p>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-text">
-            <div class="hero-tag">• Edit • Capture • Create •</div>
-            <h1 class="hero-title">Bihari <span>Editor</span></h1>
-            <div class="hero-subtitle">Turn Your Ideas Into Visual Magic ✨</div>
-            <div class="hero-services-list">Video Editing | Photography | Cinematography | Decoration</div>
-            <a href="#services" class="btn-purple">Explore Services <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-        <div class="hero-image-container">
-            <!-- अपनी फोटो लगाने के लिए 'dp.jpg' नाम से फोटो फोल्डर में रखें -->
-            <img src="dp.jpg" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600'" alt="Bihari Editor Profile" class="hero-img">
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services">
-        <div class="section-header">
-            <h2 class="section-title">Our <span>Services</span></h2>
-            <p class="section-desc">What We Offer For You</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=400" class="service-img" alt="Video Editing">
+    <section>
+        <h2 style="color: #bf55ec; margin-top: 40px;">Our Services</h2>
+        <div class="services-container">
+            <div class="card">
                 <h3>Video Editing</h3>
-                <p>Professional & Creative Video Editing</p>
-                <a href="#form" class="btn-card">Apply Now &rarr;</a>
+                <p>Professional & Creative Video Editing for Digital Platforms.</p>
             </div>
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400" class="service-img" alt="Photography">
+            <div class="card">
                 <h3>Photography</h3>
-                <p>Capture Your Best Moments</p>
-                <a href="#form" class="btn-card">Submit Now &rarr;</a>
+                <p>Capture Your Best Moments with High Quality Shots.</p>
             </div>
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=400" class="service-img" alt="Cinematography">
+            <div class="card">
                 <h3>Cinematography</h3>
-                <p>Tell Your Story Cinematically</p>
-                <a href="#form" class="btn-card">Submit Now &rarr;</a>
+                <p>Tell Your Story Cinematically with Stunning Visuals.</p>
             </div>
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=400" class="service-img" alt="Decoration">
+            <div class="card">
                 <h3>Decoration</h3>
-                <p>Make Your Event Special</p>
-                <a href="#form" class="btn-card">Submit Now &rarr;</a>
+                <p>Make Your Event Special with Professional Decoration.</p>
             </div>
         </div>
     </section>
 
-    <!-- Double Box Form Section -->
-    <section class="form-section" id="form">
-        <div class="banner-box">
-            <h4>👥 Join Our Team</h4>
-            <h2>Want to Become<br>a <span>Video Editor?</span></h2>
-            <p>Apply Now & Be a Part of Our Creative Team</p>
-            <a href="#form-input" class="btn-purple" style="width: fit-content;">Apply / Submit Now &rarr;</a>
-        </div>
+    <div class="contact-section">
+        <h2 style="color: #bf55ec;">Need Our Services?</h2>
+        <p style="color: #bbb; margin-bottom: 25px;">Submit Your Requirements Below</p>
         
-        <div class="form-box" id="form-input">
-            <h3>Need Our Services?</h3>
-            <p>Submit Your Requirements</p>
-            <form action="https://formspree.io/f/somyanitesh68@gmail.com" method="POST">
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" name="phone" placeholder="Your Mobile Number" required>
-                </div>
-                <div class="checkbox-group">
-                    <label class="checkbox-item"><input type="checkbox" name="service[]" value="Video Editing"> Video Editing</label>
-                    <label class="checkbox-item"><input type="checkbox" name="service[]" value="Decoration"> Decoration</label>
-                    <label class="checkbox-item"><input type="checkbox" name="service[]" value="Photography"> Photography</label>
-                    <label class="checkbox-item"><input type="checkbox" name="service[]" value="Cinematography"> Cinematography</label>
-                </div>
-                <div class="form-group">
-                    <textarea name="requirement" rows="3" placeholder="Your Requirement"></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Submit &rarr;</button>
-            </form>
-        </div>
-    </section>
+        <form action="https://formspree.io/f/xqppgnvw" method="POST">
+            <label>Your Name</label>
+            <input type="text" name="name" placeholder="अपना नाम लिखें" required>
+            
+            <label>Your Email</label>
+            <input type="email" name="email" placeholder="अपनी ईमेल आईडी लिखें" required>
+            
+            <label>Your Requirement</label>
+            <textarea name="message" rows="4" placeholder="अपनी ज़रूरत यहाँ साझा करें (जैसे Photography, Decoration)..." required></textarea>
+            
+            <button type="submit">Submit Now ➔</button>
+        </form>
+    </div>
 
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="footer-grid">
-            <div>
-                <div class="logo" style="margin-bottom: 10px;"><i class="fa-solid fa-crown" style="color: #a855f7;"></i> BE <span>Bihari Editor</span></div>
-                <p style="color: #666; font-size: 0.8rem;">Create • Edit • Inspire</p>
-            </div>
-            <div class="footer-info">
-                <h4>Get In Touch</h4>
-                <p><i class="fa-solid fa-phone" style="color: #a855f7;"></i> +91 98765 43210</p>
-                <p><i class="fa-solid fa-envelope" style="color: #a855f7;"></i> bihari.editor@gmail.com</p>
-                <p><i class="fa-solid fa-location-dot" style="color: #a855f7;"></i> Madhubani, Bihar</p>
-            </div>
-            <div>
-                <h4 style="color: #a855f7; margin-bottom: 15px;">Follow Us</h4>
-                <div class="social-icons">
-                    <a href="https://instagram.com/biharinitesh414" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-telegram"></i></a>
-                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2026 Bihari Editor. All Rights Reserved. | Made with ❤️ in Bihar
-        </div>
+    <footer>
+        <p>&copy; 2026 Bihari Editor. All Rights Reserved. | Made with ❤️ in Bihar</p>
     </footer>
 
 </body>
