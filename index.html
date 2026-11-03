@@ -3,52 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>बिहारी नितेश - पोर्टफोलियो</title>
-    <link rel="stylesheet" href="style.css">
+    <title>बिहारी नित्य - ऑफिशियल वेबसाइट</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; color: #333; margin: 0; padding: 20px; text-align: center; }
+        header { background: #ff5722; color: white; padding: 20px; border-radius: 8px; }
+        main { margin: 20px auto; max-width: 600px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        form { display: flex; flex-direction: column; gap: 15px; }
+        input, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background: #ff5722; color: white; border: none; padding: 10px; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        button:hover { background: #e64a19; }
+        footer { margin-top: 20px; font-size: 14px; color: #777; }
+    </style>
 </head>
 <body>
-
-    <!-- हेडर और प्रोफाइल सेक्शन -->
     <header>
-        <img src="dp.jpg" alt="बिहारी नितेश" class="profile-img">
-        <h1>बिहारी नितेश</h1>
-        <p>डिजिटल क्रिएटर और वीडियो एडिटर</p>
+        <h1>स्वागत है भाई!</h1>
+        <p>यह मेरी अपनी ओरिजिनल वेबसाइट है।</p>
     </header>
-
     <main>
-        <!-- अबाउट सेक्शन -->
-        <section class="about">
-            <h2>मेरे बारे में</h2>
-            <p>स्वागत है मेरी वेबसाइट पर! मैं डिजिटल कंटेंट निर्माण और वीडियो एडिटिंग में रुचि रखता हूँ।</p>
-        </section>
-
-        <!-- डायरेक्ट ईमेल फॉर्म सेक्शन -->
-        <section class="contact-section">
-            <h2>मुझसे संपर्क करें</h2>
+        <section>
+            <h2>संपर्क करें (Contact Form)</h2>
             <form action="https://formspree.io/f/xqppgnvw" method="POST">
-                <div class="form-group">
-                    <label for="email">आपका ईमेल:</label><br>
-                    <input type="email" id="email" name="email" required placeholder="अपना ईमेल दर्ज करें">
-                </div>
-                
-                <br>
-
-                <div class="form-group">
-                    <label for="message">आपका संदेश:</label><br>
-                    <textarea id="message" name="message" rows="5" required placeholder="अपना मैसेज यहाँ लिखें..."></textarea>
-                </div>
-                
-                <br>
-
+                <input type="text" name="name" placeholder="आपका नाम" required>
+                <input type="email" name="email" placeholder="आपकी ईमेल आईडी" required>
+                <textarea name="message" rows="4" placeholder="अपना संदेश यहाँ लिखें..." required></textarea>
                 <button type="submit">संदेश भेजें</button>
             </form>
         </section>
     </main>
-
-    <!-- फुटर -->
     <footer>
-        <p>&copy; 2026 बिहारी नितेश. सर्वाधिकार सुरक्षित.</p>
+        <p>&copy; 2026 बिहाँरी नित्य. सर्वाधिकार सुरक्षित.</p>
     </footer>
-
 </body>
 </html>
